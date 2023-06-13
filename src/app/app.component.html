@@ -294,28 +294,34 @@
 </style>
 
 <!-- Toolbar -->
-<div class="" role="">
+<div class="container-fluid" role="">
   <h1>Bla!!!</h1>
-  <table class="table table-hover table-bordered" id="FrequencyTable" style= "height: 500px">
-    <thead>
+  <table class="table table-hover table-bordered d-flex flex-column vh-100" id="FrequencyTable">
+    <thead class = "ThreeIP-TableHeader row">
       <tr>
-        <th scope="row" class="FrequencyHeader">
-          Frequency
-        </th>
+        <td scope="row" colspan="3" class="FrequencyHeader">
+          <form>
+            <label for="FrequencyInput">Frequency (in seconds): </label>
+            <input type="number" id="FrequencyInput">
+          </form>
+        </td>
         
       </tr>
-      <tr>
-        <th scope="col">#</th>
+      <tr >
+        <!-- <th scope="col" class="w-10">#</th> -->
         <th scope="col">Google Frequency</th>
+        <th scope="col">Router Frequency</th>
+        <th scope="col">Server Frequency</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="FrequencyRows row overflow-auto border">
       <!-- each row is a <tr> -->
       <!--going to make a tr component or functionality to add returned frequencies-->
       <!--first make a while list to add new <tr>s -->
-      <tr>
-        <th scope="row">{{listCount}}</th> <!--this it a table header, it's bolded-->
-        <td class="ToPlugFrequency">fake frequency</td>
+      <tr class="RowOfTable">
+        <!--this is a table header, it's bolded-->
+        <!-- <th scope="row">{{listCount}}</th>  -->
+        <!-- <td class="GoogleFrequency"></td> -->
       </tr>
     </tbody>
   </table>

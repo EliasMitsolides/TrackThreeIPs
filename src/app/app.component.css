@@ -1,3 +1,23 @@
+#FrequencyTable{
+    overflow: scroll;
+    overflow-y: scroll;
+}
+
 .FrequencyHeader{
     text-align: center;
 }
+
+
+/* .RowOfTable{
+    height: 100px
+} */ /*This just makes a first row however many pixels tall bcus RowOfTable is a <tr>*/
+
+.frequencyRows{
+   height: 800px;
+   overflow-y: auto;
+   overflow-x: hidden;
+}
+.ThreeIP-TableHeader{
+    display:flex;
+}
+

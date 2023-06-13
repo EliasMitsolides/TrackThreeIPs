@@ -11,7 +11,7 @@ export class AppComponent implements OnInit{
     console.log("ngOnInit function: "); // + this.listCount
     let rowwww = this.moreRow.bind(this)
     //setInterval(this.moreRow, 1000) this didn't work without binding to retain thiiiiis listCount
-    //setInterval(rowwww, 1000) this works!!!
+    setInterval(rowwww, 1000) //this works!!!
   }
   title = 'TrackThreeIPs';
   listCount:number = 0;
@@ -37,13 +37,26 @@ export class AppComponent implements OnInit{
     const frequencyTable = <HTMLTableElement>document.querySelector("#FrequencyTable");
     if (frequencyTable){
       var newRow = frequencyTable.insertRow(-1);
-      var firstCellInNewRow = newRow.insertCell(0);
-      var secondCellInNewRow = newRow.insertCell(1);
+      newRow.className = "RowOfTable";
+      //var firstCellInNewRow = newRow.insertCell(0);
+      var GoogleFrequency = newRow.insertCell(0);
 
       this.listCount += 1;
 
-      firstCellInNewRow.innerHTML = this.listCount.toString();
-      secondCellInNewRow.innerHTML = Math.random() as unknown as string;
+      var date = new Date();
+
+      var year = date.getFullYear();
+      var month = date.getMonth();
+      var day = date.getDate();
+
+      var hour = date.getHours();
+      var minutes = date.getMinutes();
+      var seconds = date.getSeconds();
+
+      let dateFormat = `${year}-${month}-${day} ${hour}:${minutes}:${seconds}`
+
+      //firstCellInNewRow.innerHTML = this.listCount.toString();
+      GoogleFrequency.innerHTML = dateFormat; // + Math.random() as unknown as string
     }
   }
 
