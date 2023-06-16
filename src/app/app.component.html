@@ -297,9 +297,11 @@
 <div class="container-fluid" role="">
   <h1>Bla!!!</h1>
   <table class="table table-hover table-bordered d-flex flex-column vh-100" id="FrequencyTable">
+    <!--is d-flex in the .css file-->
     <thead class = "ThreeIP-TableHeader row">
       <tr>
-        <td scope="row" colspan="3" class="FrequencyHeader">
+        <!--d-flex does default stretch behavior and w-100 isn't needed here but full width redundancy-->
+        <td scope="row" colspan="3" class="FrequencyHeader d-flex w-100"> 
           <form>
             <label for="FrequencyInput">Frequency (in seconds): </label>
             <input type="number" id="FrequencyInput">
@@ -307,14 +309,14 @@
         </td>
         
       </tr>
-      <tr >
+      <tr class="d-flex">
         <!-- <th scope="col" class="w-10">#</th> -->
-        <th scope="col">Google Frequency</th>
-        <th scope="col">Router Frequency</th>
-        <th scope="col">Server Frequency</th>
+        <th scope="col" class="flex-grow-1">Google Frequency</th>
+        <th scope="col" class="flex-grow-1">Router Frequency</th>
+        <th scope="col" class="flex-grow-1">Server Frequency</th>
       </tr>
     </thead>
-    <tbody class="FrequencyRows row overflow-auto border">
+    <tbody class="FrequencyRows  border">
       <!-- each row is a <tr> -->
       <!--going to make a tr component or functionality to add returned frequencies-->
       <!--first make a while list to add new <tr>s -->
