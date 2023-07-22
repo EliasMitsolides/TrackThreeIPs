@@ -93,6 +93,10 @@ export class AppComponent implements OnInit{
       GoogleFrequency.innerHTML = "" + googleWhatToPrint;
       RouterFrequency.innerHTML = "" + routerWhatToPrint;
       ServerFrequency.innerHTML = "" + serverWhatToPrint;
+      
+      document.getElementById("FrequencyTable")!.style.display = 'none';
+      document.getElementById("FrequencyTable")!.style.display = 'block';
+
     }
   }
 
