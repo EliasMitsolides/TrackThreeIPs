@@ -8,9 +8,10 @@
 }
 
 
-/* .RowOfTable{
-    height: 100px
-} */ /*This just makes a first row however many pixels tall bcus RowOfTable is a <tr>*/
+.RowOfTable{
+    display: flex;
+} 
+/* This just makes a first row however many pixels tall bcus RowOfTable is a <tr> */
 
 .frequencyRows{
    height: 800px;
@@ -19,5 +20,9 @@
 }
 .ThreeIP-TableHeader{
     display:flex;
+}
+
+th {
+    width:1px;
 }
 
