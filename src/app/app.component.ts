@@ -13,6 +13,7 @@ export class AppComponent implements OnInit{
   
   ngOnInit() {
     //this.freqvariable = $("#FrequencyInput")
+    
 
     this.listCount = 0;
     this.pingTime = 0;
@@ -30,12 +31,18 @@ export class AppComponent implements OnInit{
   routerTimedOut:boolean = false;
   serverTimedOut:boolean = false;
 
+  pingFlag:boolean = true;
+
   responseGoogle:number = 0;
   responseRouter:number = 0;
   responseServer:number = 0;
 
   //listCount: number = 0;
   keepGoing = true;
+
+  toggle(){
+    this.pingFlag = !this.pingFlag;
+  }
   
 
   increaseRowCount(seconds: number){
@@ -53,6 +60,9 @@ export class AppComponent implements OnInit{
     // console.log(<HTMLInputElement>document.getElementById("FrequencyTable"))
     // var row = frequencyTable.insertRow(-1);
     // console.log(typeof frequencyTable)
+    if (this.pingFlag == false){
+      return;
+    }
     const frequencyTable = <HTMLTableElement>document.querySelector("#FrequencyTable");
     if (frequencyTable){
       var newRow = frequencyTable.insertRow(-1);
@@ -85,9 +95,9 @@ export class AppComponent implements OnInit{
 
       //firstCellInNewRow.innerHTML = this.listCount.toString();
       // GoogleFrequency.innerHTML = dateFormat + " " + resultOfGooglePing; // + Math.random() as unknown as string
-      const googleWhatToPrint = !this.googleTimedOut ? this.responseGoogle : "No Response";
-      const routerWhatToPrint = !this.routerTimedOut ? this.responseRouter : "No Response";
-      const serverWhatToPrint = !this.serverTimedOut ? this.responseServer : "No Response";
+      const googleWhatToPrint = !this.googleTimedOut ? this.responseGoogle.toFixed(4) : "No Response";
+      const routerWhatToPrint = !this.routerTimedOut ? this.responseRouter.toFixed(4) : "No Response";
+      const serverWhatToPrint = !this.serverTimedOut ? this.responseServer.toFixed(4) : "No Response";
       //GoogleFrequency.innerHTML = dateFormat + " " + !this.googleTimedOut ? this.responseGoogle.toString() : "No Response";
       dateTimeTab.innerHTML = "" + dateFormat;
       GoogleFrequency.innerHTML = "" + googleWhatToPrint;
