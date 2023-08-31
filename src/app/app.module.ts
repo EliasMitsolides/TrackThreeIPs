@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { TableDataComponent } from './table-data/table-data.component';
+import { FirstTableVersionComponent } from './first-table-version/first-table-version.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TableDataComponent
+    TableDataComponent,
+    FirstTableVersionComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,44 @@
-<p>table-data works!</p>
+
+<div class="container-fluid" id="FrequencyTable"> 
+    <button (click)="toggle()" type="button" class="btn btn-primary w-100 ThreeIP-PingToggle">Toggle Ping</button>
+    <h2 *ngIf="pingFlag" class="ThreeIP-PingStatusText">Pings Are Currently Occuring</h2>
+    <h2 *ngIf="!pingFlag" class="ThreeIP-PingStatusText">Pings Are Currently Paused</h2>
+    <!-- d-flex auto applies flex-row and shrinks the divs as small as can be -->
+    <table class="table table-hover table-bordered ">
+        <thead>
+            <tr>                                <!--maybe add style="text-align: center;"-->
+                <th *ngFor="let col of columns" scope="col">
+                    {{col}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of data">
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- <ng-container>
+        <div class="column">
+            <div class="column-index" *ngFor="let col of columns"></div>
+            //some column name
+          </div>
+    
+          <div class="row-container" *ngFor="let row of data">
+            <div class="row-index"> index</div>
+            //row data
+            <ng-container
+                *ngTemplateOutlet="body.template;
+                context: { $implicit: { rowData: item, index: i, columns: columns } }
+                "
+            >
+            </ng-container>
+        </div>
+
+    </ng-container> -->
+
+</div>
